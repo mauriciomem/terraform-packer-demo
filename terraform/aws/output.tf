@@ -9,5 +9,6 @@ output "aws_ubuntu_acme_frontend_img" {
 output "aws_acme_frontend" {
   value = [
     module.ec2["frontend"].id,
-    module.ec2["frontend"].public_ip]
+    module.ec2["frontend"].public_ip
+  ]
 }
