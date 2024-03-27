@@ -28,9 +28,9 @@ This repository serves as a sample Terraform and Packer configuration to automat
 
 ### Packer
 
- 1. Export HCP_CLIENT_ID and HCP_CLIENT_SECRET variables to be able to login to the HCP portal.
+ 1. Export `HCP_CLIENT_ID` and `HCP_CLIENT_SECRET` variables to be able to login to the HCP portal.
  2. Export AWS credentials as environment variables or inside your credentials file at `$HOME/.aws/` folder
- 3. Authenticate in your GCP account via your CLI, get the path of your json credentials file, and export the GOOGLE_APPLICATION_CREDENTIALS with this file credentials.
+ 3. Authenticate in your GCP account via your CLI, get the path of your json credentials file, and export the `GOOGLE_APPLICATION_CREDENTIALS` with this file credentials.
  4. Run `cd packer` && `packer init .` to initialize your working environment with the corresponding builders
  5. Run `packer build .` to trigger an OS image building process for AWS and GCP clouds simultaneously.
 
@@ -47,9 +47,9 @@ This repository serves as a sample Terraform and Packer configuration to automat
 **Execution**
 
  1. Export AWS credentials as environment variables or inside your credentials file at `$HOME/.aws/` folder
- 2. Authenticate in your GCP account via your CLI, get the path of your json credentials file, and export the GOOGLE_APPLICATION_CREDENTIALS with this file credentials.
+ 2. Authenticate in your GCP account via your CLI, get the path of your json credentials file, and export the `GOOGLE_APPLICATION_CREDENTIALS` with this file credentials.
  3. Run `terraform init` to set up your working environment with the correct providers
  4. Create a `terraform.tfvars` from the empty `terraform.tfvars.clear` file with the corresponding values of each cloud provider.
  4. Run `terraform fmt` and `terraform validate` to update your hcl files format and check for syntax and validation errors.
- 6. Run `terraform plan` and `terraform apply`. Review the execution plan to understand if the resources to be deployed matches your configuration.
+ 6. Run `terraform plan` and `terraform apply`. Review the execution plan to understand if the resources to be deployed match your configuration.
 
