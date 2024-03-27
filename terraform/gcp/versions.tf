@@ -26,6 +26,6 @@ provider "google" {
 }
 
 provider "hcp" {
-  client_id     = "oxzkG6KYFa1gKcB7wms4E19PTQHTJLDD"
-  client_secret = "An8XqtOnjnRSIoxdkkQsazCapRyMz7BPymlY_TEhVidZ2K5-sZkc3CtetuJLNcNp"
+  client_id     = var.hcp_client_id
+  client_secret = var.hcp_client_secret
 }

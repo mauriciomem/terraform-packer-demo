@@ -81,3 +81,13 @@ variable "cidr" {
   type        = string
   description = "CIDR block to associate with the VPC"
 }
+
+variable "hcp_client_id" {
+  type = string
+  description = "HashiCorp Cloud Platform client ID"
+}
+
+variable "hcp_client_secret" {
+  type = string
+  description = "HashiCorp Cloud Platform client secret"
+}

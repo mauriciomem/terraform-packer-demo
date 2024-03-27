@@ -120,11 +120,11 @@ variable "hcp_channel" {
 }
 
 variable "hcp_client_id" {
-  type        = string
+  type = string
   description = "HashiCorp Cloud Platform client ID"
 }
 
 variable "hcp_client_secret" {
-  type        = string
+  type = string
   description = "HashiCorp Cloud Platform client secret"
 }

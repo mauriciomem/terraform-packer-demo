@@ -34,3 +34,6 @@ vpc_options = {
   routing_mode      = ""
   delete_igw_routes = true
 }
+
+client_id     = ""
+client_secret = ""

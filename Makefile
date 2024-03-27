@@ -1,7 +1,7 @@
 CURRENT_DIR = $(shell pwd)
 WAIT = $(shell sleep 1)
 
-.PHONY: clean apply/% plan/% destroy/% purge/% output/% output-value/% test
+.PHONY: clean apply/% plan/% destroy/% purge/%
 
 ifndef AWS_ACCESS_KEY_ID
   $(error AWS_ACCESS_KEY_ID env variable required but not found)
@@ -19,9 +19,6 @@ ifndef GOOGLE_APPLICATION_CREDENTIALS
   $(error GOOGLE_APPLICATION_CREDENTIALS variable required but not found)
 endif
 
-test:
-	@echo holamundo
-
 clean:
 	find . -name .terraform -type d -prune -exec rm -rf {} \;
 	find . -name .terraform.lock.hcl terraform.tfstate terraform.tfstate.backup -type f -prune -exec rm -rf {} \;
@@ -32,7 +29,7 @@ plan/%:
 
 apply/%: 
 	@echo INFO: apply::applying infrastructure changes to $(*)
-	cd $(*) && terraform apply
+	cd $(*) && terraform apply --auto-approve
 
 validate/%:
 	@echo INFO: apply::applying infrastructure changes to $(*)
@@ -40,7 +37,7 @@ validate/%:
 
 destroy/%:
 	@echo INFO: destroy::destroying infrastructure on $(*)
-	cd $(*) && terraform destroy
+	cd $(*) && terraform destroy --auto-approve
 
 purge/%:
 	@echo INFO: purge::destroying infrastructure and removing runtime exec files on $(*)
