@@ -1,0 +1,20 @@
+# /etc/systemd/system/acmeapp.service
+
+[Unit]
+Description=acme app Container Service
+Requires=docker.service
+After=docker.service
+StartLimitIntervalSec=120
+StartLimitBurst=5
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/ubuntu/trader
+ExecStart=/usr/bin/docker compose up --detach
+ExecStop=/usr/bin/docker compose down
+TimeoutStartSec=0
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
